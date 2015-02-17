@@ -1,9 +1,9 @@
 {
   "author": "Paul Massey, paul.massey@scriptwerx.io",
   "organisation": "Scriptwerx",
-  "name": "Angular-Local-Storage",
+  "name": "Angular-swx-local-storage",
   "description": "$localStorage service for use in your AngularJS applications.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "build": 0,
   "timestamp": 0,
   "copyright": "Scriptwerx 2015",

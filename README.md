@@ -1,4 +1,4 @@
-# angular-local-storage
+# angular-swx-local-storage
 
 $localStorage service for use in your AngularJS applications.
 

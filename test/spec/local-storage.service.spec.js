@@ -1,10 +1,11 @@
-describe('$sessionStorage', function() {
+describe('$localStorage', function() {
 
   'use strict';
 
   var suite = this,
     cache = {};
 
+  // Mock caching service
   suite.mockCachingService = {
     get: function (key) {
       return cache[key];
@@ -23,6 +24,7 @@ describe('$sessionStorage', function() {
     }
   };
 
+  // Mock $cacheFactory
   suite.mockCacheFactory = function() {
     return suite.mockCachingService;
   };

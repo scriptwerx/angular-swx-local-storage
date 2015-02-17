@@ -28,7 +28,7 @@ function getErrorHandler() {
  Clean
  */
 gulp.task('clean:before', function() {
-  return gulp.src(['./bin/**/*.*'])
+  return gulp.src(['./release/**/*.*'])
     .pipe(vinylPaths(del))
     .on('error', getErrorHandler());
 });
@@ -52,8 +52,7 @@ gulp.task('test:js', function() {
   var src = [
     './bower_components/angular/angular.js',
     './src/js/**/*.js',
-    './test/spec/**/*.test.js',
-    '!./src/js/*.versioned.js'
+    './test/spec/**/*.test.js'
   ];
 
   return gulp.src(src)
@@ -158,42 +157,17 @@ gulp.task('update-version:bower', function () {
 });
 
 /*
- Update the version and copy to release folder
- */
-gulp.task('version:js', function(){
-
-  var pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-
-  return gulp.src([
-    './src/js/angular-local-storage.js'
-  ])
-    .pipe(plugins.replaceTask({
-      patterns: [
-        {
-          match: 'version',
-          replacement: pkg.version
-        },
-        {
-          match: 'build',
-          replacement: pkg.build
-        }
-      ]
-    }))
-    .pipe(gulp.dest('./release'))
-    .on('error', getErrorHandler());
-});
-
-/*
- Auto annotate the JavaScript.
+ Auto annotate the JavaScript and copy to ./release.
  */
 gulp.task('annotate:js', function () {
-  return gulp.src('./release/*.js')
+  return gulp.src('./src/js/service/*.js')
     .pipe(plugins.ngAnnotate({
       remove: true,
       add: true,
       single_quotes: true
     }))
-    .pipe(gulp.dest('./release'))
+    .pipe(plugins.rename('swx-local-storage.js'))
+    .pipe(gulp.dest('./release/'))
     .on('error', getErrorHandler());
 });
 
@@ -201,8 +175,8 @@ gulp.task('annotate:js', function () {
  Minify/uglify the JavaScript
  */
 gulp.task('uglify:js', function() {
-  return gulp.src(['./release/angular-local-storage.js'])
-    .pipe(plugins.uglifyjs('angular-local-storage.min.js', {
+  return gulp.src(['./release/swx-local-storage.js'])
+    .pipe(plugins.uglifyjs('swx-local-storage.min.js', {
       outSourceMap: true,
       basePath: '/release',
       sourceRoot: '/'
@@ -233,15 +207,6 @@ gulp.task('header:js', function() {
     .on('error', getErrorHandler());
 });
 
-/*
- Cleanup
- */
-gulp.task('clean:after', function() {
-  return gulp.src(['./src/js/*.versioned.js'])
-    .pipe(vinylPaths(del))
-    .on('error', getErrorHandler());
-});
-
 //===============================================
 // Sequenced tasks
 //===============================================
@@ -256,11 +221,9 @@ gulp.task('default', function(cb) {
     'bump:prerelease',
     'update:build',
     'update-version:bower',
-    'version:js',
     'annotate:js',
     'uglify:js',
     'header:js',
-    'clean:after',
     'doc:js', cb);
 });
 
@@ -274,11 +237,9 @@ gulp.task('patch', function(cb) {
     'bump:patch',
     'update:build',
     'update-version:bower',
-    'version:js',
     'annotate:js',
     'uglify:js',
     'header:js',
-    'clean:after',
     'doc:js', cb);
 });
 
@@ -292,11 +253,9 @@ gulp.task('build', function(cb) {
     'bump:minor',
     'update:build',
     'update-version:bower',
-    'version:js',
     'annotate:js',
     'uglify:js',
     'header:js',
-    'clean:after',
     'doc:js', cb);
 });
 
@@ -310,11 +269,9 @@ gulp.task('release', function(cb) {
     'bump:major',
     'update:build',
     'update-version:bower',
-    'version:js',
     'annotate:js',
     'uglify:js',
     'header:js',
-    'clean:after',
     'doc:js', cb);
 });
 

@@ -23,7 +23,7 @@
   "ignore": [
     "package.json",
     "gulpfile.js",
-    "angular-local-storage.iml",
+    "angular-swx-local-storage.iml",
     "**/*.md",
     "bin",
     "docs",
@@ -34,9 +34,9 @@
     "bower_components"
   ],
   "main": [
-    "./release/angular-local-storage.js",
-    "./release/angular-local-storage.min.js",
-    "./release/angular-local-storage.min.js.map"
+    "./release/swx-local-storage.js",
+    "./release/swx-local-storage.min.js",
+    "./release/swx-local-storage.min.js.map"
   ],
   "dependencies": {
     "angular": ">=1 <1.4.0"
