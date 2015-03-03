@@ -205,7 +205,7 @@
 
   /**
    * @ngdoc overview
-   * @name Angular-Local-Storage
+   * @name swxLocalStorage
    * @description
    * $localStorage service for use in your AngularJS applications.
    *

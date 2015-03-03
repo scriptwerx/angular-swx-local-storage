@@ -1,8 +1,8 @@
 /**
  * Angular-swx-local-storage - $localStorage service for use in your AngularJS applications.
  * @author Paul Massey, paul.massey@scriptwerx.io
- * @version v0.0.0
- * @build 0 - Tue Feb 17 2015 08:40:37 GMT+0000 (GMT)
+ * @version v0.0.2
+ * @build 1 - Tue Mar 03 2015 14:21:34 GMT+0000 (GMT)
  * @link http://www.scriptwerx.io
  * @license http://opensource.org/licenses/MIT
  */
@@ -214,7 +214,7 @@
 
   /**
    * @ngdoc overview
-   * @name Angular-Local-Storage
+   * @name swxLocalStorage
    * @description
    * $localStorage service for use in your AngularJS applications.
    *
