@@ -8,4 +8,4 @@ Objects put or retrieved from this storage are automatically serialized or deser
 
 ## Installation
 
-  bower install angular-swx-local-storage
+    bower install angular-swx-local-storage
