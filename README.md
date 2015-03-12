@@ -1,6 +1,6 @@
 # angular-swx-local-storage
 
-[![Build Status](https://travis-ci.org/scriptwerx/angular-swx-local-storage.svg?branch=master)](https://travis-ci.org/scriptwerx/angular-swx-local-storage)
+[![Build Status](https://travis-ci.org/scriptwerx/angular-swx-local-storage.svg?branch=master)](https://travis-ci.org/scriptwerx/angular-swx-local-storage) [![Coverage Status](https://coveralls.io/repos/scriptwerx/angular-swx-local-storage/badge.svg)](https://coveralls.io/r/scriptwerx/angular-swx-local-storage)
 
 $localStorage service for use in your AngularJS applications.
 
