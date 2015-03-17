@@ -1,3 +1,5 @@
+![](lib/img/localstorage.png)
+
 # angular-swx-local-storage
 
 [![Build Status](https://travis-ci.org/scriptwerx/angular-swx-local-storage.svg?branch=master)](https://travis-ci.org/scriptwerx/angular-swx-local-storage) [![Coverage Status](https://coveralls.io/repos/scriptwerx/angular-swx-local-storage/badge.svg)](https://coveralls.io/r/scriptwerx/angular-swx-local-storage)
@@ -139,6 +141,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
+
+![](lib/img/logo.png)
 
 [JIRA]: http://www.atlassian.com/software/jira
 [Web Storage]: http://caniuse.com/#feat=namevalue-storage
