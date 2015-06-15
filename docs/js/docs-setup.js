@@ -1,6 +1,6 @@
 NG_DOCS={
   "sections": {
-    "api": "Angular-swx-local-storage"
+    "api": "angular-swx-local-storage"
   },
   "pages": [
     {
@@ -35,7 +35,7 @@ NG_DOCS={
       "js/prettify.js"
     ],
     "styles": [],
-    "title": "Angular-swx-local-storage",
+    "title": "angular-swx-local-storage",
     "html5Mode": true,
     "editExample": true,
     "navTemplate": false,
