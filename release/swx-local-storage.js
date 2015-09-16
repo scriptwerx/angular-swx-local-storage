@@ -1,8 +1,8 @@
 /**
  * angular-swx-local-storage - $localStorage service for use in your AngularJS applications.
  * @author Paul Massey, paul.massey@scriptwerx.io
- * @version v0.0.6
- * @build 11 - Mon Jun 15 2015 11:39:59 GMT+0100 (BST)
+ * @version v0.0.7
+ * @build 18 - Wed Sep 16 2015 15:03:11 GMT+0100 (BST)
  * @link http://www.scriptwerx.io
  * @license http://opensource.org/licenses/MIT
  */
@@ -125,16 +125,13 @@
      */
     service.get = function(key) {
 
-      var item;
+      var item = cache.get(key);
 
-      if (cache.get(key)) {
-        item = cache.get(key);
-      }
-      else if (isLocalStorageAvailable) {
+      if (typeof item !== 'boolean' && !item && isLocalStorageAvailable) {
         item = angular.fromJson(webStorage.getItem(prefix + key));
       }
 
-      if (!item) {
+      if (typeof item !== 'boolean' && !item) {
         return void 0;
       }
 
