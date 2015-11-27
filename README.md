@@ -16,7 +16,7 @@ Node Package Manager:
 
     npm install --save-dev angular-swx-local-storage
 
-Bower:
+Bower, but please see: [Why we should stop using Bower - and how to do it](https://gofore.com/ohjelmistokehitys/stop-using-bower/).
 
     bower install angular-swx-local-storage
 
