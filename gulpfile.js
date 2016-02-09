@@ -76,6 +76,18 @@ gulp.task('lint:js', function() {
 });
 
 /*
+ Check Angular
+ */
+gulp.task('check-angular', function() {
+    var eslint = require('gulp-eslint');
+
+    return gulp.src(['./src/js/**/*.js', '!./src/js/**/*.spec.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
+/*
  Test the JavaScript.
  */
 gulp.task('test:js', function(cb) {
@@ -248,6 +260,7 @@ function generateBuild(bump, cb) {
         'prune:bower',
         'install:bower',
         'lint:js',
+        'check-angular',
         'test:js',
         'clean:before',
         bump,

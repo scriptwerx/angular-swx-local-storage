@@ -1,8 +1,8 @@
 /**
  * angular-swx-local-storage - $localStorage service for use in your AngularJS applications.
  * @author Paul Massey, paul.massey@scriptwerx.io
- * @version v0.0.9
- * @build 26 - Fri Nov 27 2015 10:33:23 GMT+0000 (GMT)
+ * @version v1.0.0
+ * @build 29 - Tue Feb 09 2016 10:25:52 GMT+0000 (GMT)
  * @link http://www.scriptwerx.io
  * @license http://opensource.org/licenses/MIT
  */
@@ -38,6 +38,7 @@
      *
      * @ngInject
      */
+    $localStorage.$inject = ['$window', '$location', '$cacheFactory'];
     function $localStorage($window, $location, $cacheFactory) {
 
         /**
@@ -163,6 +164,7 @@
          * ```
          */
         service.remove = function(key) {
+            service.put(key, void 0);
             if (isLocalStorageAvailable) {
                 webStorage.removeItem(prefix + key);
             }
@@ -208,7 +210,6 @@
 
         })();
     }
-    $localStorage.$inject = ['$window', '$location', '$cacheFactory'];
 
     /**
      * @ngdoc overview

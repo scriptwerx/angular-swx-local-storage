@@ -155,6 +155,7 @@
          * ```
          */
         service.remove = function(key) {
+            service.put(key, void 0);
             if (isLocalStorageAvailable) {
                 webStorage.removeItem(prefix + key);
             }
